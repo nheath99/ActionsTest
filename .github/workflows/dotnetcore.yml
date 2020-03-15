@@ -24,8 +24,7 @@ jobs:
     - name: ReportGenerator
       uses: danielpalme/ReportGenerator-GitHub-Action@4.5.2
       with:
-        reports: 'coverage.cobertura.xml'
+        reports: '**/coverage.cobertura.xml'
         targetdir: 'coveragereport'
         reporttypes: 'Cobertura'
-        sourcedirs: 'tests/ActionsTest.Test;tests/ActionsTest.Test.Common'
         verbosity: Verbose
