@@ -28,3 +28,4 @@ jobs:
         targetdir: 'coveragereport'
         reporttypes: 'Cobertura'
         sourcedirs: 'tests/ActionsTest.Test;tests/ActionsTest.Test.Common'
+        verbosity: Verbose
