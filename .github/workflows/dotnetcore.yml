@@ -20,4 +20,11 @@ jobs:
     - name: Build with dotnet
       run: dotnet build --configuration Release
     - name: Test with dotnet
-      run: dotnet test --configuration Release /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:Exclude="[FreightFile.Views]%2c[xunit.*]*"
+      run: dotnet test --configuration Release /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:Exclude="[ActionsTest.Views]%2c[xunit.*]*"
+    - name: ReportGenerator
+      uses: danielpalme/ReportGenerator-GitHub-Action@4.5.2
+      with:
+        reports: 'coverage.xml'
+        targetdir: 'coveragereport'
+        reporttypes: 'Cobertura'
+        sourcedirs: 'tests/ActionsTest.Test;tests/ActionsTest.Test.Common'
