@@ -20,7 +20,7 @@ jobs:
     - name: Build with dotnet
       run: dotnet build --configuration Release
     - name: Test with dotnet
-      run: dotnet test -v d --configuration Release /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:Exclude="[ActionsTest.Views.dll]%2c[xunit.*]*"
+      run: dotnet test -v d --configuration Release /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:Exclude="[ActionsTest.Views.dll]*%2c[xunit.*]*"
     - name: ReportGenerator
       uses: danielpalme/ReportGenerator-GitHub-Action@4.5.2
       with:
