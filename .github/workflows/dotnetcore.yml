@@ -20,7 +20,7 @@ jobs:
     - name: Build with dotnet
       run: dotnet build --configuration Release
     - name: Test with dotnet
-      run: dotnet test -v d --configuration Release --collect:"XPlat Code Coverage"
+      run: dotnet test -v d --configuration Release --collect:"XPlat Code Coverage" /p:Exclude="[ActionsTest.Views.*]*
     - name: ReportGenerator
       uses: danielpalme/ReportGenerator-GitHub-Action@4.5.2
       with:
